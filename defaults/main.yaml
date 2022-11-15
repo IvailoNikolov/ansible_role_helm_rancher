@@ -1,0 +1,25 @@
+helm_rancher_name: rancher
+helm_rancher_chart_repo_url: "https://releases.rancher.com/server-charts/latest"
+helm_rancher_chart_version: latest
+helm_rancher_chart_ref: rancher
+helm_rancher_release_namespace: cattle-system
+helm_rancher_create_namespace: True
+helm_rancher_values: 
+  installCRDs: true
+  hostname: "{{ rancher_hostname}} "
+  ingress.tls.source: letsEncrypt
+  letsEncrypt.ingress.class: nginx
+  letsEncrypt.email: "{{ acme_issue_email }} "
+  replicas: "{{ groups['agent'] | length }}"
+helm_rancher_values_files: []
+helm_rancher_wait: True
+helm_rancher_disable_hook: "no"
+helm_rancher_force: "no"
+helm_rancher_atomic: "no"
+helm_rancher_skip_crds: "no"
+helm_rancher_update_repo_cache: "no"
+helm_rancher_binary_path: "/usr/local/bin/helm"
+helm_rancher_context: default
+helm_rancher_kubeconfig: "~/.kube/config"
+helm_rancher_validate_certs: "yes"
+acme_issue_email: john.d@google.com

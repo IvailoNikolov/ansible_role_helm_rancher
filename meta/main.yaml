@@ -1,15 +1,11 @@
 ---
 galaxy_info:
   author: Frantche
-  description: Ansible role install nginx ingress
+  description: Ansible role install rancher
   company: Frantchenco
   license: unlicense
-  min_ansible_version: 1.2
-  categories:
-  - cloud
-  - helm
-  - kubernetes
-  - openshift
-  - ingress
-  - nginx
-dependencies: {}
+  min_ansible_version: "1.2"
+  galaxy_tags:
+    - kubernetes
+    - rancher
+dependencies: []

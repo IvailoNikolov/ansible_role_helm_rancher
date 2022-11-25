@@ -5,12 +5,11 @@ helm_rancher_chart_ref: rancher
 helm_rancher_release_namespace: cattle-system
 helm_rancher_create_namespace: true
 helm_rancher_values:
-  installCRDs: true
-  hostname: "{{ rancher_hostname }}"
+  hostname: to.be.defined.com
   ingress.tls.source: letsEncrypt
   letsEncrypt.ingress.class: nginx
-  letsEncrypt.email: "{{ acme_issue_email }} "
-  replicas: "{{ groups['agent'] | length }}"
+  letsEncrypt.email: john.d@gmail.com
+  replicas: 1
 helm_rancher_values_files: []
 helm_rancher_wait: true
 helm_rancher_disable_hook: "no"

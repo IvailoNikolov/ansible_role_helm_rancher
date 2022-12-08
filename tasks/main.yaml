@@ -30,3 +30,14 @@
       - op: add
         path: /spec/ingressClassName
         value: nginx
+
+- name: Patch rancher Cert manager issuer
+  kubernetes.core.k8s_json_patch:
+    api_version: cert-manager.io/v1
+    kind: Issuer
+    namespace: cattle-system
+    name: rancher
+    patch:
+      - op: add
+        path: /spec/acme/solvers/0/http01/ingress/class
+        value: nginx

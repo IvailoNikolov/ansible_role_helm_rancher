@@ -6,9 +6,14 @@ helm_rancher_release_namespace: cattle-system
 helm_rancher_create_namespace: true
 helm_rancher_values:
   hostname: to.be.defined.com
-  ingress.tls.source: letsEncrypt
-  letsEncrypt.ingress.class: nginx
-  letsEncrypt.email: john.d@gmail.com
+  ingress:
+    tls:
+      source: letsEncrypt
+  letsEncrypt:
+    ingress:
+      class: nginx
+  letsEncrypt:
+    email: john.d@gmail.com
   replicas: 1
 helm_rancher_values_files: []
 helm_rancher_wait: true

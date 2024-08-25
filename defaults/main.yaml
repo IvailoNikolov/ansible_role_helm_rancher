@@ -12,7 +12,6 @@ helm_rancher_values:
   letsEncrypt:
     ingress:
       class: nginx
-  letsEncrypt:
     email: john.d@gmail.com
   replicas: 1
 helm_rancher_values_files: []
